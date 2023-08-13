@@ -1,3 +1,5 @@
+@model NoteWebApplication.Models.MultyNoteView
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +11,13 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <h1>Just Testing</h1>
+    <form asp-action="CreateNote" method="post">
+        <div>
+            <label>Title</label> 
+            <input asp-for="Title"/>
+            <span asp-validation-for="Title"></span>
+            <button type="submit">Add note</button> 
+        </div>
+    </form>
 </body>
 </html>
