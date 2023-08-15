@@ -19,5 +19,23 @@
             <button type="submit">Add note</button> 
         </div>
     </form>
+    <p></p>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var n in Model.Notes)
+            {
+                <tr>
+                    <td class="note-colum" scope="row">@n.Id</td>
+                    <td class="note-colum">@n.Title</td> 
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>
