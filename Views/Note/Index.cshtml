@@ -33,6 +33,11 @@
                 <tr>
                     <td class="note-colum" scope="row">@n.Id</td>
                     <td class="note-colum">@n.Title</td> 
+                    <td class="button-colum">
+                        <form method="post">
+                        <input type="submit" value="Delete" asp-action="DeleteNote" asp-route-id="@n.Id"/>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>

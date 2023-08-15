@@ -14,8 +14,13 @@ public class NoteService : INoteService
         return _notes;
     }
 
-    public Note? GetOneNote(Guid id)
+    public Note? GetOneNote(Guid? id)
     {
         return _notes.FirstOrDefault(x => x.Id == id);
+    }
+
+    public void DeleteNote (Note dnote)
+    {
+        _notes.Remove(dnote);
     }
 }

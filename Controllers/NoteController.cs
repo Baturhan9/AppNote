@@ -34,4 +34,14 @@ public class NoteController : Controller
 
         return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public IActionResult DeleteNote(Guid? id)
+    {
+        var noteobj = _noteService.GetOneNote(id);
+        if(noteobj == null)
+            return NotFound();
+        _noteService.DeleteNote(noteobj);
+        return RedirectToAction("Index");
+    }
 }
